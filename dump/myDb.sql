@@ -21,4 +21,10 @@ create table IF NOT EXISTS students (
 );
 
 INSERT INTO teachers (id, name, surname, username, password, email) VALUES
-('1', 'Vladimir', 'Lenin', 'vlenin', 'redarmy', 'vladlenin@gmail.ru');
+('1', 'Giannis', 'Papadakis', 'gpapadakis', 'ninechars', 'gpapadakis@gmail.gr');
+
+INSERT INTO students (id, name, surname, fathername, grade, mobilenumber, birthday) VALUES
+('2015030183', 'Vasilis', 'Lymperakis', 'Dimitris', '6.5', '1234567890', '1997-11-07');
+
+INSERT INTO students (id, name, surname, fathername, grade, mobilenumber, birthday) VALUES
+('2020030183', 'Giorgos', 'Papadopoulos', 'Giannis', '7.5', '1243567890', '2002-01-27');

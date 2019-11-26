@@ -22,15 +22,17 @@
                 <?php   
                 if (isset($_POST['submit'])){
                     $row=searchStudent($_POST['id']);
-                    if(isset($row)){
-                        echo "ID: ".$row['id']."<br /><br />";
-                        echo "Name: ".$row['name']."<br /><br />";
-                        echo "Surname: ".$row['surname']."<br /><br />";
-                        echo "Father name: ".$row['fathername']."<br /><br />";
-                        echo "Grade: ".$row['grade']."<br /><br />";
-                        echo "Phone Number: ".$row['mobilenumber']."<br /><br />";
-                        echo "Date of Birth: ".date("d-m-Y", strtotime($row['birthday']))."<br /><br />";
-                    }else{
+                    if(isset($row)){?>
+                    <table>
+                        <tr><td><p class="thick"><?php echo "ID:"?></p></td> <td><?php echo $row['id'];?></td></tr>
+                        <tr><td><p class="thick"><?php echo "Name:"?></p></td> <td><?php echo $row['name'];?></td></tr>
+                        <tr><td><p class="thick"><?php echo "Surname:"?></p></td> <td><?php echo $row['surname'];?></td></tr>
+                        <tr><td><p class="thick"><?php echo "Father name:"?></p></td> <td><?php echo $row['fathername'];?></td></tr>
+                        <tr><td><p class="thick"><?php echo "Grade:"?></p></td> <td><?php echo $row['grade'];?></td></tr>
+                        <tr><td><p class="thick"><?php echo "Phone Number:"?></p></td> <td><?php echo $row['mobilenumber'];?></td></tr>
+                        <tr><td><p class="thick"><?php echo "Date of Birth:"?></p></td> <td><?php echo date("d-m-Y", strtotime($row['birthday']));?></td></tr>
+                    </table>
+            <?php   }else{
                         echo "Sorry, no such student exists.";
                     }
                 }

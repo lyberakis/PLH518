@@ -22,13 +22,13 @@
                         <input type="submit" name="submit" value="Search" />
                     </form>
               <?php if (isset($_POST['submit'])){
-                        setcookie("id", $_POST["id"], time()+60*60);
+                        setcookie("id", $_POST["id"], time()+10*60);
                         header("Location: EditStudent.php");
                     }
                 }else{
                     $results=searchStudent($_COOKIE["id"]);
                     if(!isset($results)){
-                        setcookie("id", null, time()+60*60);
+                        setcookie("id", null, time()+10*60);
                         header("Location: EditStudent.php");
                     }?>
                 <form action="EditStudent.php" method="post">
@@ -48,13 +48,13 @@
               <?php if (isset($_POST['submit2'])){
                         if (intval(strlen($_POST['mobilenumber'])==10)){
                             editStudent($results["id"]);
-                            setcookie("id", null, time()+60*60);
+                            setcookie("id", null, time()+10*60);
                             header("Location: Teacher.php");
                         }else 
                             echo "Please enter a phone number with 10 digits.";
                     }
                     if (isset($_POST['submit3'])){
-                        setcookie("id", null, time()+60*60);
+                        setcookie("id", null, time()+10*60);
                         header("Location: EditStudent.php");
                     }
                 }?>
